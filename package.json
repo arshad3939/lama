@@ -1,5 +1,6 @@
 {
   "name": "lama",
+  "homepage": "https://arshad3939.github.io/lamaLive",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^8.5.0",
+    "gh-pages": "^5.0.0",
     "hamburger-react": "^2.5.0",
     "mediaquery": "^0.0.4",
     "react": "^18.2.0",
@@ -23,6 +25,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
