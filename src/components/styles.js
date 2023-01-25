@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 import SearchIcon from "./icons/search";
 import ArrowRightIcon from "./icons/arrowRight";
+import { DeviceSize } from "./Responsive";
 
 export const Containers = styled.div`
   position: relative;
@@ -25,7 +26,7 @@ export const Containers = styled.div`
       box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.74); */
       border: none;
 
-      @media (min-width: 768px) {
+      @media ${DeviceSize.mobile} {
         width: 15%;
       }
     `}
