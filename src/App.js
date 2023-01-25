@@ -16,11 +16,11 @@ const TopAnnouncment = styled.div`
 `;
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/lamaLive">
     <TopAnnouncment>Super Deal! Free Shipping on Orders Over $50</TopAnnouncment>
     <Navigetion />
       <Routes>
-        <Route path='/' element={<Home />}></Route>
+        <Route path='/lamaLive' element={<Home />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

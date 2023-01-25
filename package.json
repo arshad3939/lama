@@ -2,7 +2,7 @@
   "name": "lama",
   "homepage": "https://arshad3939.github.io/lamaLive",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "-": "^0.0.1",
     "@emotion/react": "^11.10.5",
