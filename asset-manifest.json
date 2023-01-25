@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lamaLive/static/css/main.073c9b0a.css",
-    "main.js": "/lamaLive/static/js/main.b8d60baa.js",
+    "main.js": "/lamaLive/static/js/main.ca22b625.js",
     "static/js/787.5941ac90.chunk.js": "/lamaLive/static/js/787.5941ac90.chunk.js",
     "index.html": "/lamaLive/index.html",
     "main.073c9b0a.css.map": "/lamaLive/static/css/main.073c9b0a.css.map",
-    "main.b8d60baa.js.map": "/lamaLive/static/js/main.b8d60baa.js.map",
+    "main.ca22b625.js.map": "/lamaLive/static/js/main.ca22b625.js.map",
     "787.5941ac90.chunk.js.map": "/lamaLive/static/js/787.5941ac90.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.b8d60baa.js"
+    "static/js/main.ca22b625.js"
   ]
 }
