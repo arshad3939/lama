@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
-import { popularProducts } from '../data';
-import Products from './Products';
+import { useProductContext } from '../context/ProductContext';
+import PopularProducts from './PopularProducts';
 
 const Container = styled.section`
 display: flex;
@@ -18,17 +18,23 @@ const Tittle = styled.h1`
     margin-bottom: 30px;
 `
 
-const Product = ({item}) => {
+const PopularProduct = () => {
+    const {isLoading, featured} = useProductContext();
+
+    if(isLoading){
+        return<div>....Loading</div>;
+    }
+
   return (
     <>
         <Tittle>Popular Products</Tittle>
     <Container>
-        {popularProducts.map((item)=>(
-            <Products item={item} key={item.id} />
+        {featured.map((curElem)=>(
+            <PopularProducts {...curElem} key={curElem.id} />
         ))}
     </Container>
     </>
     )
 }
 
-export default Product
+export default PopularProduct

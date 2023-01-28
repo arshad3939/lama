@@ -1,6 +1,7 @@
 import styled, { css, keyframes } from "styled-components";
 import SearchIcon from "./icons/search";
 import ArrowRightIcon from "./icons/arrowRight";
+import { DeviceSize } from "./Responsive";
 
 export const Containers = styled.div`
   position: relative;
@@ -9,8 +10,9 @@ export const Containers = styled.div`
   border-radius: 8px;
   border: 1px solid #393e46;
   padding: 5px;
+  line-height: 30px;
   /* background: #222831; */
-  transition: all 0.5s;
+  transition: all 0.5s ease-in-out;
 
   display: flex;
   justify-content: center;
@@ -20,12 +22,12 @@ export const Containers = styled.div`
   ${({ hover }) =>
     hover &&
     css`
-      width: 50%;
+      width: 15%;
       /* -webkit-box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.74);
       box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.74); */
       border: none;
 
-      @media (min-width: 768px) {
+      @media ${DeviceSize.mobile} {
         width: 15%;
       }
     `}
@@ -33,7 +35,7 @@ export const Containers = styled.div`
 
 export const SearchInput = styled.input`
   position: absolute;
-  top: -4px;
+  top: -5px;
   left: 0px;
   width: 100%;
   line-height: 30px;
@@ -41,7 +43,7 @@ export const SearchInput = styled.input`
   border: 1px solid #00adb5;
   font-size: 16px;
   border-radius: 8px;
-  padding: 4px 20px;
+  padding: 5px 20px;
   margin: 0;
   -moz-appearance: none;
   -webkit-appearance: none;

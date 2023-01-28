@@ -2,8 +2,8 @@ import React from 'react';
 import Slider from '../components/Slider';
 import styled from 'styled-components';
 import Catogries from '../components/Catogries';
-import Product from '../components/Product';
 import Newsletter from '../components/Newsletter';
+import PopularProduct from '../components/PopularProduct';
 
 // styled css
 const Container = styled.section`
@@ -20,7 +20,7 @@ const Home = () => {
     <Container>
       <Slider/>
       <Catogries/>
-      <Product />
+      <PopularProduct />
       <Newsletter />
     </Container>
   )

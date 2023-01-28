@@ -1,9 +1,10 @@
 import './App.css';
 import {Navigetion} from './components/Navigetion';
-import Home from './pages/Home';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Footer from './components/Footer';
+import ErrorPage from './pages/ErrorPage';
+import Product from './pages/Product';
 
 
 const TopAnnouncment = styled.div`
@@ -20,7 +21,8 @@ function App() {
     <TopAnnouncment>Super Deal! Free Shipping on Orders Over $50</TopAnnouncment>
     <Navigetion />
       <Routes>
-        <Route path='/lamaLive' element={<Home />}></Route>
+        <Route path='/' element={<Home />}></Route>
+        <Route path="*" element={<ErrorPage/>}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

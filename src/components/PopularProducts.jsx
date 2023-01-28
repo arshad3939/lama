@@ -61,11 +61,12 @@ transition: all 0.1s ease-in-out;
 
 
 
-const Products = ({ item }) => {
+const PopularProducts = (curElem) => {
+    const {img} = curElem;
     return (
-        <Container>
+        <Container >
             <Circle />
-            <Image src={item.img} />
+            <Image src={img} />
             <Info>
                 <Icons>
                     <ShoppingCartOutlined />
@@ -81,4 +82,4 @@ const Products = ({ item }) => {
     )
 }
 
-export default Products
+export default PopularProducts
