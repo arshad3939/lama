@@ -4,8 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import styled from 'styled-components';
 import Footer from './components/Footer';
 import ErrorPage from './pages/ErrorPage';
-import Product from './pages/Product';
-
+import Home from './pages/Home';
 
 const TopAnnouncment = styled.div`
   font-size: 16px;
