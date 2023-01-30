@@ -1,6 +1,7 @@
-import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import { FavoriteBorderOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import React from 'react';
 import styled from 'styled-components';
+import { DeviceSize } from './Responsive';
 
 const Info = styled.div`
     position: absolute;
@@ -11,13 +12,22 @@ const Info = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #08080838;
+    background-color: #acb5e552;
     z-index: 3;
     opacity: 0;
     transition: all 0.5s ease-in-out;
 `;
 
 const Container = styled.div`
+    width: 20vw;
+    margin: 10px 10px;
+    border: 1px solid #f0f0f5;
+     @media ${DeviceSize.mobile}{
+        width: 100vw;
+     }
+`;
+
+const TopProductImg = styled.div`
 flex: 1;
 margin: 5px;
 display:flex;
@@ -31,6 +41,8 @@ position: relative;
     opacity: 1;
 }
 `;
+
+
 const Circle = styled.div`
 width: 200px;
 height: 200px;
@@ -59,12 +71,32 @@ transition: all 0.1s ease-in-out;
 }
 `;
 
+const BottomProductContent = styled.div`
+    display: flex;
+    margin: 0 15px;
+    justify-content: space-between;
+    padding: 0 11px;
+    padding-bottom: 28px;
+`;
+
+const Tittle = styled.h1`
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding-right: 43px;
+`;
+
+const PriceLabel = styled.label`
+    font-size: 26px;
+    color: red;
+`;
 
 
 const PopularProducts = (curElem) => {
-    const {img} = curElem;
+    const {img, title, price} = curElem;
     return (
         <Container >
+            <TopProductImg>
             <Circle />
             <Image src={img} />
             <Info>
@@ -72,12 +104,14 @@ const PopularProducts = (curElem) => {
                     <ShoppingCartOutlined />
                 </Icons>
                 <Icons>
-                    <SearchOutlined />
-                </Icons>
-                <Icons>
                     <FavoriteBorderOutlined />
                 </Icons>
             </Info>
+            </TopProductImg>
+            <BottomProductContent>
+                <Tittle>{title}</Tittle>
+                <PriceLabel>${price}</PriceLabel>
+            </BottomProductContent>
         </Container>
     )
 }

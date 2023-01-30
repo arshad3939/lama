@@ -10,7 +10,7 @@ const initialState = {
     isLoading: false,
     isError: false,
     products:[],
-    featured:[]
+    featured :[]
 };
 
 const AppProvider = ({children}) =>{

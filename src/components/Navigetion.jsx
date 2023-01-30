@@ -18,21 +18,21 @@ height: 65px;
 display: flex;
 align-items: center;
 `;
+
 const Wrapper = styled.div`
 width: 100%;
 display: flex;
 justify-content: space-between;
 align-items: center;
-flex-flow: row wrap;
 padding: 0 60px;
 @media ${DeviceSize.mobile}{
     padding: 0 20px;
 }
-`
+`;
 const LeftMenu = styled.div`
 color: #000;
-width: 100%;
-flex: 0;
+display: flex;
+align-items: center;
 a{
     text-decoration: none;
     color: #000;
@@ -50,36 +50,47 @@ a{
         }
     }
 }
-`
-const RightMenu = styled.div`
-color: #000;
-width: 100%;
-display: flex;
-justify-content: end;
-align-items: center;
-flex: 1;
 `;
 
-
-const MenuLink = styled.nav`
-display: flex;
-align-items: center;
-justify-content: center;
-margin: 0 20px;
-width: 15%;
-text-align: center;
-
-
-a{
+const MenuBar = styled.div`
+    margin-left: 30px;
+    a{
     text-decoration: none;
+    letter-spacing: 1px;
     width: 100%;
     color: #000;
     padding: 0 10px;
     border-right: 1px solid #00000038;
     &:hover{
         color: #5B42F3;
-        transition: all 0.3s ease-in-out;
-        font-weight: 600;
+    }
+}
+@media ${DeviceSize.mobile}{
+    display: none;
+}
+`;
+const RightMenu = styled.div`
+color: #000;
+display: flex;
+justify-content: end;
+align-items: center;
+`;
+
+const MenuLink = styled.nav`
+display: flex;
+align-items: center;
+justify-content: center;
+margin: 0 20px;
+text-align: center;
+a{
+    text-decoration: none;
+    letter-spacing: 1px;
+    width: 100%;
+    color: #000;
+    padding: 0 10px;
+    border-right: 1px solid #00000038;
+    &:hover{
+        color: #5B42F3;
     }
 }
 `
@@ -99,7 +110,13 @@ const Navigetion = () => {
     return (
         <Container>
             <Wrapper>
-                <LeftMenu><Link to="/home"><h1>Lama</h1></Link>
+                <LeftMenu>
+                    <Link to="/"><h1>Lama</h1></Link>
+                    <MenuBar>
+                        <Link to="/about">About us</Link>
+                        <Link to="/product">Product</Link>
+                        <Link to="/contact">Contact Us</Link>
+                    </MenuBar>
                 </LeftMenu>
                 <RightMenu>
                     {!isMobile && <Search />}

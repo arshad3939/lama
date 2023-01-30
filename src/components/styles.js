@@ -28,7 +28,7 @@ export const Containers = styled.div`
       border: none;
 
       @media ${DeviceSize.mobile} {
-        width: 15%;
+        width: 80%;
       }
     `}
 `;

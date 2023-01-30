@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
-import { useProductContext } from '../context/ProductContext';
 import PopularProducts from './PopularProducts';
 import { DeviceSize } from './Responsive';
+
 
 const Container = styled.section`
 display: flex;
@@ -11,37 +11,24 @@ justify-content: center;
 flex-wrap: wrap;
 background-color: #fff;
 margin: 40px 0;
-padding: 40px 0;
 @media ${DeviceSize.mobile}{
     padding: 50px 60px;
     width: 100vw;
 }
 `;
 
-const Tittle = styled.h1`
-    font-weight: 800;
-    font-size: 60px;
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 30px;
-`
 
-const PopularProduct = () => {
-    const {isLoading, featured} = useProductContext();
-
-    if(isLoading){
-        return<div>....Loading</div>;
-    }
+const GridView = ({products}) => {
 
   return (
     <>
     <Container>
-        {featured.map((curElem)=>(
+        {products.map((curElem)=>(
             <PopularProducts {...curElem} key={curElem.id} />
         ))}
     </Container>
     </>
-    )
+  )
 }
 
-export default PopularProduct
+export default GridView
