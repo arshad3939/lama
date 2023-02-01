@@ -9,8 +9,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 flex-wrap: wrap;
-background-color: #fff;
-margin: 40px 0;
 padding: 40px 0;
 @media ${DeviceSize.mobile}{
     padding: 50px 60px;
@@ -18,13 +16,13 @@ padding: 40px 0;
 }
 `;
 
-const Tittle = styled.h1`
-    font-weight: 800;
-    font-size: 60px;
-    text-align: center;
-    margin-top: 60px;
-    margin-bottom: 30px;
-`
+// const Tittle = styled.h1`
+//     font-weight: 800;
+//     font-size: 60px;
+//     text-align: center;
+//     margin-top: 60px;
+//     margin-bottom: 30px;
+// `
 
 const PopularProduct = () => {
     const {isLoading, featured} = useProductContext();

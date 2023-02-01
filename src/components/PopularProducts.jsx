@@ -22,6 +22,7 @@ const Container = styled.div`
     width: 20vw;
     margin: 10px 10px;
     border: 1px solid #f0f0f5;
+    background-color: #fff;
      @media ${DeviceSize.mobile}{
         width: 100vw;
      }
@@ -77,6 +78,7 @@ const BottomProductContent = styled.div`
     justify-content: space-between;
     padding: 0 11px;
     padding-bottom: 28px;
+    background-color: #fff;
 `;
 
 const Tittle = styled.h1`

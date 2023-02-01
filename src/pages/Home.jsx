@@ -14,13 +14,28 @@ justify-content: center;
 background-color: #f6f7ff;
 flex-direction: column;
 `;
+const BgColor = styled.div`
+background-color: #fff;
+padding: 40px 0;
+`;
+const HeadingTwo = styled.h2`
+font-size: 40px;
+margin-bottom: 30px;
+letter-spacing: 1px;
+text-align: center;
+`;
 
 const Home = () => {
   return (
     <Container>
-      <Slider/>
-      <Catogries/>
-      <PopularProduct />
+      <Slider />
+      <Catogries />
+      <BgColor>
+        <HeadingTwo>
+          Popular Products
+        </HeadingTwo>
+        <PopularProduct />
+      </BgColor>
       <Newsletter />
     </Container>
   )

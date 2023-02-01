@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Badge } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
@@ -71,6 +71,13 @@ const Container = styled.section`
 const MobileNav = () => {
     const [isOpen, setOpen] = useState(false);
 
+    
+   let handler= ()=>{
+    if(setOpen){
+        setOpen(false)
+    }
+   }
+
     let iconColor={
         color: '#000'
     }
@@ -82,9 +89,10 @@ const MobileNav = () => {
                 toggled={isOpen}
                 toggle={() => setOpen(!isOpen)}
                 color="#5B42F3"
+                duration={0.8}
                 style={{ position: "relative" }} />
             <Wrapper>
-                {isOpen && <RightMenu>
+                {isOpen && <RightMenu onClick={handler}>
                     <CartIcon >
                         <IconButton aria-label="cart" style={iconColor} >
                             <Badge badgeContent={4} color="primary">

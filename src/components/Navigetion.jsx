@@ -33,6 +33,7 @@ const LeftMenu = styled.div`
 color: #000;
 display: flex;
 align-items: center;
+width: 50%;
 a{
     text-decoration: none;
     color: #000;
@@ -74,6 +75,10 @@ color: #000;
 display: flex;
 justify-content: end;
 align-items: center;
+width: 100%;
+@media ${DeviceSize.mobile}{
+    display: none;
+}
 `;
 
 const MenuLink = styled.nav`
@@ -122,7 +127,7 @@ const Navigetion = () => {
                     {!isMobile && <Search />}
                     {!isMobile && <MenuLink>
                         <Link to="/registreation">Registreation</Link>
-                        <Link to="/Sign-in">Sign In</Link>
+                        <Link to="/signin">Sign In</Link>
                     </MenuLink>}
                     {!isMobile && <CartIcon >
                         <IconButton aria-label="cart" style={{ color: '#393e46' }} >

@@ -11,7 +11,13 @@ width: 89.5%;
 height: 45vh;
 margin: 0 auto;
 margin: 0 auto;
-    margin-bottom: 60px;
+margin-bottom: 60px;
+@media ${DeviceSize.mobile}{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: inherit;
+}
 `;
 
 const Left = styled.div`
@@ -86,6 +92,7 @@ span {
 @media ${DeviceSize.mobile} {  
     font-size: 24px;
     margin: 0 auto;  
+    margin-top: 20px;
 }
 `
 
