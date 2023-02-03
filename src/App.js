@@ -10,6 +10,7 @@ import About from './pages/About';
 import ContactForm from './pages/ContactForm';
 import Registreation from './pages/Registreation';
 import SignIn from './pages/SignIn';
+import SingleProduct from './pages/SingleProduct';
 
 const TopAnnouncment = styled.div`
   font-size: 16px;
@@ -31,6 +32,7 @@ function App() {
         <Route path='/contact' element={<ContactForm/>}></Route>
         <Route path='/registreation' element={<Registreation/>}></Route>
         <Route path='/signin' element={<SignIn/>}></Route>
+        <Route path='/singleproduct/:id' element={<SingleProduct/>}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

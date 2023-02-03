@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { DeviceSize } from './Responsive';
 
@@ -107,10 +108,13 @@ const ListView = ({ products }) => {
                             <ImageProduct src={img} />
                         </Left>
                         <Right>
+                            
                             <Tittle>{title}</Tittle>
+                            
                             <PriceLable>${price}</PriceLable>
                             <Desc>{description}</Desc>
-                            <HeroButton><span className="text">Show Now</span></HeroButton>
+                            <Link to={`/singleproduct/${id}`}>
+                            <HeroButton><span className="text">Show Now</span></HeroButton></Link>
                         </Right>
                     </Container>
                 )

@@ -4,13 +4,15 @@ import reducer from '../reducer/productReducer';
 
 
 const AppContext = createContext();
-const API = "https://dev-ftxsbtnobhiy8gk.api.raw-labs.com/lamaproduct";
+const API = "https://api.pujakaitem.com/api/products";
 
 const initialState = {
     isLoading: false,
     isError: false,
     products:[],
-    featured :[]
+    featured :[],
+    isSingleLoading : false,
+    singleProduct : {},
 };
 
 const AppProvider = ({children}) =>{
@@ -27,12 +29,24 @@ const AppProvider = ({children}) =>{
         };
     };
 
+    // my seond single product
+    const getSingleProduct = async(url) =>{
+        dispatch ({type:"SET_SINGLE_LOADING"});
+        try {
+            const res = await axios.get(url);
+            const singleProduct = await res.data;
+            dispatch ({type: "SET_SINGLE_PRODUCT", payload: singleProduct});            
+        } catch (error) {
+            dispatch({type:"SET_SINGLE_ERROR"});
+        }
+    }
+
     useEffect(()=>{
         getProducts(API);
     }, []);
 
     return(
-        <AppContext.Provider value={{...state}}>{children}</AppContext.Provider>
+        <AppContext.Provider value={{...state, getSingleProduct}}>{children}</AppContext.Provider>
     )
 }
 

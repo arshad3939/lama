@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { DeviceSize } from '../components/Responsive';
@@ -143,15 +143,31 @@ text-align: center;
 
 
 const SignIn = () => {
+
+    const data = {username:'', password:'' };
+    const [inputData, setInputData] = useState(data);
+    const [flag, setFlag] = useState(false);
+
+    const onChangeHandel = (e) =>{
+        setInputData({...inputData, [e.target.name]:e.target.value});
+    }
+
+    const onSubmitHandle = (e) =>{
+        e.preventDefault();
+        setFlag(true)
+    }
+
+
     return (
         <Container>
+            <div>{(flag)? <h2>username:{inputData.username}</h2>:''}</div>
             <Tittle>Sign in to Lama</Tittle>
-            <Form>
+            <Form onSubmit={onSubmitHandle}>
                     <Label> Username or Email Address
-                        <Input type="text" name="username" autoComplete='off' required data-cypress='email'/>
+                        <Input type="text" name="username" autoComplete='off' required value={inputData.username} onChange={onChangeHandel}/>
                     </Label>
                 <Label> Password 
-                    <Input type="password" name="password"  autoComplete='off' required />
+                    <Input type="password" name="password"  autoComplete='off' required value={inputData.password} onChange={onChangeHandel}/>
                 </Label>
                 <HeroButton type='submit'><span className="text">Sign In</span></HeroButton>
             </Form>

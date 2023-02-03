@@ -1,5 +1,6 @@
 import { FavoriteBorderOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { DeviceSize } from './Responsive';
 
@@ -19,10 +20,10 @@ const Info = styled.div`
 `;
 
 const Container = styled.div`
-    width: 20vw;
     margin: 10px 10px;
     border: 1px solid #f0f0f5;
     background-color: #fff;
+    width: 30%;
      @media ${DeviceSize.mobile}{
         width: 100vw;
      }
@@ -30,11 +31,10 @@ const Container = styled.div`
 
 const TopProductImg = styled.div`
 flex: 1;
-margin: 5px;
 display:flex;
 align-items: center;
 justify-content: center;
-min-width: 280px;
+width: 100%;
 height: 350px;
 background-color: #fff;
 position: relative;
@@ -52,7 +52,9 @@ border-radius: 50%;
 position: absolute;
 `;
 const Image = styled.img`
-height: 75%;
+height: 100%;
+width: 100%;
+object-fit: cover;
 z-index: 1;
 `;
 
@@ -76,9 +78,16 @@ const BottomProductContent = styled.div`
     display: flex;
     margin: 0 15px;
     justify-content: space-between;
-    padding: 0 11px;
-    padding-bottom: 28px;
+    padding: 18px 11px;
     background-color: #fff;
+    align-items: center;
+    a{
+        text-decoration: none;
+        color: #000;
+        &:hover{
+            color: blue;
+        }
+    }
 `;
 
 const Tittle = styled.h1`
@@ -95,23 +104,25 @@ const PriceLabel = styled.label`
 
 
 const PopularProducts = (curElem) => {
-    const {img, title, price} = curElem;
+    const { id, image, name, price } = curElem;
     return (
         <Container >
             <TopProductImg>
-            <Circle />
-            <Image src={img} />
-            <Info>
-                <Icons>
-                    <ShoppingCartOutlined />
-                </Icons>
-                <Icons>
-                    <FavoriteBorderOutlined />
-                </Icons>
-            </Info>
+                <Circle />
+                <Image src={image} />
+                <Info>
+                    <Icons>
+                        <ShoppingCartOutlined />
+                    </Icons>
+                    <Icons>
+                        <FavoriteBorderOutlined />
+                    </Icons>
+                </Info>
             </TopProductImg>
             <BottomProductContent>
-                <Tittle>{title}</Tittle>
+                <Link to={`/singleproduct/${id}`}>
+                    <Tittle>{name}</Tittle>
+                </Link>
                 <PriceLabel>${price}</PriceLabel>
             </BottomProductContent>
         </Container>

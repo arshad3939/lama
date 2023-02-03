@@ -17,6 +17,7 @@ flex-direction: column;
 const BgColor = styled.div`
 background-color: #fff;
 padding: 40px 0;
+width: 100%;
 `;
 const HeadingTwo = styled.h2`
 font-size: 40px;
