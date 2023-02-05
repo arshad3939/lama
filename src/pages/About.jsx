@@ -41,7 +41,7 @@ position: absolute;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     @media ${DeviceSize.mobile}{
-        width: 75vh;
+        width: 38vh;
         font-size: 44px;
     }
 `;

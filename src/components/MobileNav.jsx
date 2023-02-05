@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Badge } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
@@ -6,6 +6,7 @@ import { ShoppingCart } from '@mui/icons-material';
 import Hamburger from 'hamburger-react';
 import { Search } from './Navigetion';
 import { Link } from 'react-router-dom';
+import { useCartContext } from '../context/CartContext';
 
 const rotate = keyframes`
   from {
@@ -70,6 +71,7 @@ const Container = styled.section`
 
 const MobileNav = () => {
     const [isOpen, setOpen] = useState(false);
+    const {totalItem} = useCartContext();
 
     
    let handler= ()=>{
@@ -95,14 +97,14 @@ const MobileNav = () => {
                 {isOpen && <RightMenu onClick={handler}>
                     <CartIcon >
                         <IconButton aria-label="cart" style={iconColor} >
-                            <Badge badgeContent={4} color="primary">
+                            <Badge badgeContent={totalItem} color="primary">
                                 <ShoppingCart />
                             </Badge>
                         </IconButton>
                     </CartIcon>
                     <MenuLink>
                         <Link to="/registreation">Registreation</Link>
-                        <Link to="/Sign-in">Sign In</Link>
+                        <Link to="/signin">Sign In</Link>
                         <Link to="/about">About us</Link>
                         <Link to="/product">Product</Link>
                         <Link to="/contact">Contact Us</Link>

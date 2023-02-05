@@ -9,6 +9,7 @@ import { Containers, SearchInput, IconRightArrow, IconMagnifyingGlass } from "./
 import MobileNav from './MobileNav';
 import { DeviceSize, HamSize } from './Responsive';
 import { useMediaQuery } from 'react-responsive';
+import { useCartContext } from '../context/CartContext';
 
 
 // styled components css
@@ -111,6 +112,7 @@ const Navigetion = () => {
     // const handleClick = () =>{
     //     setToggle(!toggle);
     // };
+    const {totalItem} = useCartContext();
 
     return (
         <Container>
@@ -130,11 +132,13 @@ const Navigetion = () => {
                         <Link to="/signin">Sign In</Link>
                     </MenuLink>}
                     {!isMobile && <CartIcon >
+                        <Link to='/cart'>
                         <IconButton aria-label="cart" style={{ color: '#393e46' }} >
-                            <Badge badgeContent={4} color="primary">
+                            <Badge badgeContent={totalItem}  color="primary">
                                 <ShoppingCart />
                             </Badge>
                         </IconButton>
+                        </Link>
                     </CartIcon>}
                 </RightMenu>
                 {isMobile && <MobileNav  />}

@@ -1,23 +1,23 @@
 export const sliderItems = [
     {
       id: 1,
-      img: "https://i.ibb.co/jMRqh4r/2.png",
-      title: "SUMMER SALE",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+      img: "https://i.ibb.co/FmvgyF8/banner-watch.png",
+      title: "Relogio Faminino",
+      desc: "Titanium Grade 2 folding clasp and safety push buttons with black carbide coating Stocking the finest luxury watch brands, we specialise.",
       bg: "#f7b6ff",
     },
     {
       id: 2,
-      img: "https://i.ibb.co/6t9Qh7B/3.png",
-      title: "AUTUMN COLLECTION",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+      img: "https://i.ibb.co/4mdRzkm/h1-slide-2-img-1.png",
+      title: "It's Powerful it's cyberStore",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqenim ad minim.",
       bg: "#ffc7b6",
     },
     {
       id: 3,
-      img: "https://i.ibb.co/jMRqh4r/2.png",
-      title: "LOUNGEWEAR LOVE",
-      desc: "DON'T COMPROMISE ON STYLE! GET FLAT 30% OFF FOR NEW ARRIVALS.",
+      img: "https://i.ibb.co/Hg75n9x/head-phone-21.png",
+      title: "Shop wise with price comparisons",
+      desc: "Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.",
       bg: "#b6d0ff",
     },
   ];
@@ -25,18 +25,18 @@ export const sliderItems = [
   export const categories = [
     {
       id: 1,
-      img: "https://images.pexels.com/photos/5886041/pexels-photo-5886041.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "SHIRT STYLE!",
+      img: "https://i.ibb.co/D56Lyrc/watch-bb-1.png",
+      title: "Leading Luxury",
     },
     {
       id: 2,
-      img: "https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      title: "LOUNGEWEAR LOVE",
+      img: "https://i.ibb.co/txqhwXL/h1-parallax-1.jpg",
+      title: "In-Ear Headphone",
     },
     {
       id: 3,
-      img: "https://images.pexels.com/photos/5480696/pexels-photo-5480696.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-      title: "LIGHT JACKETS",
+      img: "https://i.ibb.co/syFyRDB/banner-mockup.png",
+      title: "Cutting Edge Technology Store",
     },
   ];
 

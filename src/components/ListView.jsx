@@ -8,9 +8,8 @@ const Wrapper = styled.section`
 `;
 const Container = styled.div`
 display: flex;
-width: 89.5%;
-height: 45vh;
-margin: 0 auto;
+width: 100%;
+align-items: center;
 margin: 0 auto;
 margin-bottom: 60px;
 @media ${DeviceSize.mobile}{
@@ -18,6 +17,7 @@ margin-bottom: 60px;
     flex-direction: column;
     text-align: center;
     height: inherit;
+    padding: 0 10px;
 }
 `;
 
@@ -31,6 +31,11 @@ object-fit: contain;
 `;
 const Right = styled.div`
 flex: 2;
+margin-left: 40px;
+@media ${DeviceSize.mobile}{
+    margin: 0;
+    padding: 0 10px;
+}
 `;
 const Tittle = styled.h1`
 font-size: 26px;
@@ -38,7 +43,10 @@ font-size: 26px;
 `;
 const PriceLable = styled.label`
 font-size: 30px;
-    color: red;
+color: red;
+@media ${DeviceSize.mobile}{
+    font-size: 18px;
+}
 `;
 const Desc = styled.p`
 letter-spacing: 1px;
@@ -77,6 +85,7 @@ const HeroButton = styled.button`
   outline: 0;
 }
 
+
 span {
   background-color: rgb(5, 6, 45);
   padding: 10px 18px;
@@ -101,19 +110,19 @@ const ListView = ({ products }) => {
     return (
         <Wrapper>
             {products.map((curElem) => {
-                const {id, title, img, price, description } = curElem;
+                const {id, name, image, price, description } = curElem;
                 return (
                     <Container key={id}>
                         <Left>
-                            <ImageProduct src={img} />
+                            <ImageProduct src={image} />
                         </Left>
                         <Right>
                             
-                            <Tittle>{title}</Tittle>
+                            <Tittle>{name}</Tittle>
                             
                             <PriceLable>${price}</PriceLable>
                             <Desc>{description}</Desc>
-                            <Link to={`/singleproduct/${id}`}>
+                            <Link to={`/singleproduct/${id}`} style={{textDecoration:"none"}}>
                             <HeroButton><span className="text">Show Now</span></HeroButton></Link>
                         </Right>
                     </Container>

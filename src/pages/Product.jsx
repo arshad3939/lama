@@ -13,7 +13,7 @@ padding: 50px 60px;
 
 `;
 const TopFilterRow = styled.div`
-width: 89.5%;
+width: 100%;
 margin: 0 auto;
 background-color: #eeedff;
 `;

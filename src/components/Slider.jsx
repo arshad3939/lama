@@ -1,5 +1,6 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from '@mui/icons-material';
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { DeviceSize } from '../components/Responsive';
 import { sliderItems } from '../data';
@@ -8,7 +9,6 @@ import { sliderItems } from '../data';
 
 const Wrapper = styled.div`
   width: 100%;
-  padding: 60px 60px;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -55,14 +55,25 @@ const Slide = styled.div`
 const ImageSection = styled.div`
 width: 100%;
 position: relative;
-  img{
-    width: 80%;
+`;
+const ImageBox = styled.div`
+    width: 47%;
+    margin: 0 auto;
+img{
     margin: 0 auto;
     display: flex;
+    @media ${DeviceSize.mobile}{
+      object-fit: contain;
+    width: 100%;
+    }
   }
 `;
 const ContentSection = styled.div`
   width: 100%;
+  padding-right: 78px;
+  @media ${DeviceSize.mobile}{
+    padding: 0;
+  }
 `;
 const HeroHeading = styled.h1`
   font-size: 70px;
@@ -126,6 +137,10 @@ span {
   width: 100%;
   height: 100%;
   transition: 300ms;
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
 }
 
 &:hover span {
@@ -140,12 +155,12 @@ span {
 const Circle = styled.div`
 width: 500px;
     height: 500px;
-    background-color: ${props=>props.bg};
+    background-color: ${props => props.bg};
     border-radius: 50%;
     position: absolute;
     margin-left: -98px;
     z-index: -1;
-    top: 19%;
+    top: 5%;
     left: 20%;
     @media ${DeviceSize.mobile}{
       width: 200px;
@@ -156,89 +171,60 @@ width: 500px;
 `;
 
 const Slider = () => {
-  
-  // useEffect(() => {
-    //   const lastIndex = slideIndex.length - 1;
-    //   if (slideIndex < 0) {
-    //     setSlideIndex(lastIndex);
-    //   }
-    //   if (slideIndex > lastIndex) {
-    //     setSlideIndex(0);
-    //   }
-    // }, [slideIndex]);
-    // const timeoutRef = React.useRef(null);
 
-  // function resetTimeout() {
-  //   if (timeoutRef.current) {
-  //     clearTimeout(timeoutRef.current);
-  //   }
-  // }
+  const [slideIndex, setSlideIndex] = useState(0);
+  const timeoutRef = React.useRef(null);
 
-    // useEffect(() => {
-    //   resetTimeout();
-    // timeoutRef.current = setTimeout(
-    //   () => {
-    //     setSlideIndex(slideIndex + 1);
-    //   }, 1000);
-    //   // return () => clearInterval(slider);
-    //   return () => {
-    //     resetTimeout();
-    //   };
-    // }, [slideIndex]);
-    
-    
-    
-    const [slideIndex, setSlideIndex] = useState(0);
-    const timeoutRef = React.useRef(null);
-
-    function resetTimeout() {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
+  function resetTimeout() {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
     }
+  }
 
-    useEffect(()=>{
-      timeoutRef.current = setInterval(()=>{
-        setSlideIndex(slideIndex => slideIndex < 2 ? slideIndex + 1 : 0 )
-      },3000);
-      return () => {
-        resetTimeout();
-      };
-    },[])
+  useEffect(() => {
+    timeoutRef.current = setInterval(() => {
+      setSlideIndex(slideIndex => slideIndex < 2 ? slideIndex + 1 : 0)
+    }, 3000);
+    return () => {
+      resetTimeout();
+    };
+  }, [])
 
-    const HandelClick = (direction) => {
-        if (direction === "left") {
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
-        } else {
-            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
-        }
+  const HandelClick = (direction) => {
+    if (direction === "left") {
+      setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+    } else {
+      setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
     }
+  }
 
-    return (
-        <Wrapper>
-            <Arrow direction="left" onClick={() => HandelClick("left")}>
-                <ArrowLeftOutlined />
-            </Arrow>
-            <Hero slideIndex={slideIndex} >
-                {sliderItems.map((item)=>(
-                    <Slide key={item.id}>
-                    <ImageSection>
-                        <img src={item.img} alt=''></img>
-                        <Circle bg={item.bg}/>
-                    </ImageSection>
-                    <ContentSection>
-                        <HeroHeading>{item.title}</HeroHeading>
-                        <HeroSubHeading>{item.desc}</HeroSubHeading>
-                        <HeroButton><span className="text">Show Now</span></HeroButton>
-                    </ContentSection>
-                </Slide>
-                    ))}
-            </Hero>
-            <Arrow direction="right" onClick={() => HandelClick("right")}>
-                <ArrowRightOutlined />
-            </Arrow>
-        </Wrapper>
-    )
+  return (
+    <Wrapper>
+      <Arrow direction="left" onClick={() => HandelClick("left")}>
+        <ArrowLeftOutlined />
+      </Arrow>
+      <Hero slideIndex={slideIndex} >
+        {sliderItems.map((item) => (
+          <Slide key={item.id}>
+            <ImageSection>
+              <ImageBox>
+                <img src={item.img} alt=''></img>
+                <Circle bg={item.bg} />
+              </ImageBox>
+            </ImageSection>
+            <ContentSection>
+              <HeroHeading>{item.title}</HeroHeading>
+              <HeroSubHeading>{item.desc}</HeroSubHeading>
+              <HeroButton><span className="text"><Link to='/product'>Show Now</Link></span></HeroButton>
+            </ContentSection>
+          </Slide>
+        ))}
+      </Hero>
+      <Arrow direction="right" onClick={() => HandelClick("right")}>
+        <ArrowRightOutlined />
+      </Arrow>
+    </Wrapper>
+  )
 }
 
 export default Slider

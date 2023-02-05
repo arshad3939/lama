@@ -11,7 +11,7 @@ justify-content: center;
 flex-wrap: wrap;
 padding: 40px 0;
 @media ${DeviceSize.mobile}{
-    padding: 50px 60px;
+    padding: 50px 10px;
     width: 100vw;
 }
 `;
@@ -35,7 +35,7 @@ const PopularProduct = () => {
     <>
     <Container>
         {featured.map((curElem)=>(
-            <PopularProducts {...curElem} key={curElem.id} />
+            <PopularProducts {...curElem} key={curElem.id}/>
         ))}
     </Container>
     </>

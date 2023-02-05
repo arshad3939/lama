@@ -2,6 +2,7 @@ import { CheckRounded } from '@mui/icons-material';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { useCartContext } from '../context/CartContext';
 import CartAmountToggle from './CartAmountToggle';
 import { DeviceSize } from './Responsive';
 
@@ -92,9 +93,12 @@ span {
 `
 
 const AddToCart = ({ product }) => {
+    const { addToCart } = useCartContext();
     const { id, colors, stock, } = product;
+
     const [color, setColor] = useState(colors[0]);
     const [amount, setAmount] = useState(1);
+
     const setDecrease = () => {
         amount > 1 ? setAmount(amount - 1) : setAmount(1);
     };
@@ -120,9 +124,9 @@ const AddToCart = ({ product }) => {
                 </Colors>
             </CartColor>
             <AddProductToCart>
-                {/* <Link to='/'cart > */}
+                <Link to="/cart" onClick={() => addToCart(id, color, amount, product)}>
                     <HeroButton><span className="text">Add to Cart</span></HeroButton>
-                {/* </Link> */}
+                </Link>
             </AddProductToCart>
 
         </Container>

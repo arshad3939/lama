@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { DeviceSize } from '../components/Responsive';
@@ -42,6 +42,7 @@ padding-bottom: 62px;
 }
 @media ${DeviceSize.mobile}{
     padding-bottom: 62px;
+    margin-top: 30px;
 }
 `;
 
@@ -53,6 +54,9 @@ margin: 14px 10px 4px;
 color: #0d0c22;
 font-weight: 600;
 letter-spacing: 1px;
+@media ${DeviceSize.mobile}{
+    margin: 10px 0;
+}
 `;
 
 const Input = styled.input`
@@ -107,7 +111,6 @@ font-size: 18px;
   touch-action: manipulation;
   white-space: nowrap;
   cursor: pointer;
-  margin-top: 20px;
   margin-left: 11px;
 
 &:active{
@@ -134,6 +137,7 @@ span {
   margin: 0 auto;
     width: 100%;
     font-size: 18px;  
+    margin-top: 30px;
 }
 `;
 

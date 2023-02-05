@@ -6,20 +6,26 @@ import AddToCart from '../components/AddToCart';
 import FormatPrice from '../components/FormatPrice';
 import MyImages from '../components/MyImages';
 import PageNavigetion from '../components/PageNavigetion';
+import { DeviceSize } from '../components/Responsive';
 import Star from '../components/Star';
 import { useProductContext } from '../context/ProductContext';
 
 
 const Container = styled.section`
-    width: 100%;
-    padding: 11px 60px;
+width: 100%;
+padding: 11px 60px;
+@media ${DeviceSize.mobile}{
+  padding: 11px 22px;
+}
 `;
 
 const Wrapper = styled.div`
 display: flex;
 margin-top: 30px;
 align-items: center;
-
+@media ${DeviceSize.mobile}{
+  flex-wrap: wrap;
+}
 `;
 
 const Left = styled.div`
@@ -46,10 +52,17 @@ width: 100%;
   }
   .desc{
       padding-right: 100px;
+      @media ${DeviceSize.mobile}{
+        padding: 0;
+      }
     }
   h3{
     margin-bottom: 20px;
   }
+@media ${DeviceSize.mobile}{
+  padding: 0;
+  margin-top: 20px;
+}
 `;
 const Iconsd = styled.div`
 display: flex;
@@ -57,7 +70,10 @@ flex-direction: column;
 align-items: center;
 margin: 10px 30px;
 border: 1px solid #d9d9dd;
-  padding: 11px 12px;
+padding: 11px 12px;
+@media ${DeviceSize.mobile}{
+  margin: 10px 6px;
+}
 `;
 const FourIcons = styled.div`
 display: flex;
@@ -69,7 +85,7 @@ ${Iconsd}:nth-child(1){
 `;
 
 const ProductDetails=styled.div``;
-const Cart = styled.div``;
+const Carts = styled.div``;
 
 
 const API = "https://api.pujakaitem.com/api/products"
@@ -78,10 +94,12 @@ const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } = useProductContext();
   const { id } = useParams();
 
-  const { id: alias, name, image, company, description, stars, reviews, price, stock } = singleProduct;
+  const { id:alias, name, image, company, description, stars, reviews, price, stock } = singleProduct;
+  
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[]);
 
   if (isSingleLoading) {
     return <div className="page_loading">Loading.....</div>;
@@ -121,9 +139,9 @@ const SingleProduct = () => {
             <p>Brand:<span> {company}</span></p>
           </ProductDetails>
           <hr style={{width:"85%", marginTop: "30px", opacity: "0.3"}}/>
-          <Cart>
+          <Carts>
             {stock > 0 && <AddToCart product={singleProduct} />}
-          </Cart>
+          </Carts>
         </Right>
       </Wrapper>
     </Container>

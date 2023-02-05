@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { DeviceSize } from './Responsive';
+import FormatPrice from './FormatPrice';
 
 const Info = styled.div`
     position: absolute;
@@ -100,6 +101,9 @@ const Tittle = styled.h1`
 const PriceLabel = styled.label`
     font-size: 26px;
     color: red;
+    @media ${DeviceSize.mobile}{
+        font-size: 16px;
+    }
 `;
 
 
@@ -112,7 +116,7 @@ const PopularProducts = (curElem) => {
                 <Image src={image} />
                 <Info>
                     <Icons>
-                        <ShoppingCartOutlined />
+                            <ShoppingCartOutlined />
                     </Icons>
                     <Icons>
                         <FavoriteBorderOutlined />
@@ -123,7 +127,7 @@ const PopularProducts = (curElem) => {
                 <Link to={`/singleproduct/${id}`}>
                     <Tittle>{name}</Tittle>
                 </Link>
-                <PriceLabel>${price}</PriceLabel>
+                <PriceLabel><FormatPrice price={price} /></PriceLabel>
             </BottomProductContent>
         </Container>
     )

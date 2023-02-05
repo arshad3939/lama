@@ -12,7 +12,7 @@ flex-wrap: wrap;
 background-color: #fff;
 margin: 40px 0;
 @media ${DeviceSize.mobile}{
-    padding: 0 60px;
+    padding: 0 0;
     width: 100vw;
 }
 `;

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { HamSize, DeviceSize } from './Responsive';
 import { useMediaQuery } from 'react-responsive';
+import { Link } from 'react-router-dom';
 
 
 const Container = styled.section`
@@ -15,6 +16,8 @@ const Image = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0) 0%, #bed2ff 100%);
 `;
 const Info = styled.div`
     display: flex;
@@ -41,6 +44,7 @@ const Info = styled.div`
 const Tittle = styled.h1`
     font-size: 35px;
     margin-bottom: 30px;
+    text-align: center;
 `;
 const Button = styled.button`
   align-items: center;
@@ -76,10 +80,17 @@ span {
   width: 100%;
   height: 100%;
   transition: 300ms;
+  a{
+    text-decoration: none;
+    color: #fff;
+    &:hover{
+        color: #000;
+    }
+  }
+  &:hover{
+  background-color: #fff;
+  color: #000;
 }
-
-&:hover span {
-  background: none;
 }
 
 @media ${DeviceSize.mobile} {  
@@ -117,7 +128,7 @@ const CatogriesItem = ({ item }) => {
                 viewport={{ once: false, amount: 0.9 }}
                 variants={variants}>
                     <Tittle>{item.title}</Tittle>
-                    <Button><span className="text">Show Now</span></Button>
+                    <Button><span className="text"><Link to='/product'>Show Now</Link></span></Button>
                 </motion.div>
             </Info>
         </Container>
