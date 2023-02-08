@@ -95,10 +95,10 @@ const SingleProduct = () => {
   const { id } = useParams();
 
   const { id:alias, name, image, company, description, stars, reviews, price, stock } = singleProduct;
-  
+
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   },[]);
 
   if (isSingleLoading) {

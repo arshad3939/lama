@@ -83,7 +83,7 @@ a{
   margin: 0 14px;
 }
 `;
-const Empaty = styled.div`
+const Ampaty = styled.div`
 height: 20vh;
 display: flex;
 align-items: center;
@@ -131,11 +131,10 @@ const Cart = () => {
 
   if (cart.length === 0) {
     return (
-      <Empaty>
+      <Ampaty>
         <h3>No Item in the Cart</h3>
         <ContinueShop type='button'><Link to='/product'>Continue Shop</Link></ContinueShop>
-
-      </Empaty>
+      </Ampaty>
     )
   } else {
     return (
@@ -152,7 +151,7 @@ const Cart = () => {
             return (
               <CartItems key={curElem.id} {...curElem} />
             )
-          })}
+          })};
         </ProductCartItem>
         <BottomButton>
           <ContinueShop type='button'><Link to='/product'>Continue Shop</Link></ContinueShop>

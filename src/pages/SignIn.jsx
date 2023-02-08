@@ -112,6 +112,7 @@ font-size: 18px;
   white-space: nowrap;
   cursor: pointer;
   margin-left: 11px;
+  margin-top: 30px;
 
 &:active{
   outline: 0;
@@ -137,7 +138,6 @@ span {
   margin: 0 auto;
     width: 100%;
     font-size: 18px;  
-    margin-top: 30px;
 }
 `;
 
