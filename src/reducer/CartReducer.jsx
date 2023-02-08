@@ -116,17 +116,17 @@ const CartReducer = (state, action) => {
     };      
   };
 
-  if(action.type === "CART_TOTAL_PRICE"){
-    let updateTotalPrice = state.cart.reduce((initalVal, curItem)=>{
-      let {price, amount} = curItem;
-      initalVal = initalVal + price * amount;
-      return initalVal;
-    }, 0);
-    return{
-      ...state,
-      totalPrice: updateTotalPrice,
-    }
-  }
+//   if(action.type === "CART_TOTAL_PRICE"){
+//     let updateTotalPrice = state.cart.reduce((initalVal, curItem)=>{
+//       let {price, amount} = curItem;
+//       initalVal = initalVal + price * amount;
+//       return initalVal;
+//     }, 0);
+//     return{
+//       ...state,
+//       totalPrice: updateTotalPrice,
+//     }
+//   }
 
   return state;
 }
