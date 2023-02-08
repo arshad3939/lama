@@ -107,6 +107,7 @@ const CartReducer = (state, action) => {
     }
   };
 
+<<<<<<< HEAD
   // if(action.type === "CART_TOTAL_ITEM"){
   //   let updateCartIcon = state.cart.reduce((initialValue, curItem)=>{
   //     let {amount} = curItem;
@@ -133,6 +134,31 @@ const CartReducer = (state, action) => {
   //     totalPrice,
   //   }
   // }
+=======
+//   if(action.type === "CART_TOTAL_ITEM"){
+//     let updateCartIcon = state.cart.reduce((initalVal, curItem)=>{
+//       let {amount} = curItem;
+//       initalVal = initalVal + amount;
+//       return initalVal;
+//     }, 0);
+//     return{
+//       ...state,
+//       totalItem: updateCartIcon,
+//     };      
+//   };
+
+//   if(action.type === "CART_TOTAL_PRICE"){
+//     let updateTotalPrice = state.cart.reduce((initalVal, curItem)=>{
+//       let {price, amount} = curItem;
+//       initalVal = initalVal + price * amount;
+//       return initalVal;
+//     }, 0);
+//     return{
+//       ...state,
+//       totalPrice: updateTotalPrice,
+//     }
+//   }
+>>>>>>> 7bbdbc3ea6cee312072a0ead2e7e6417f2cfb1ff
 
   return state;
 }
