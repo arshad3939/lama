@@ -13,7 +13,7 @@ const getLocalCartData = () =>{
 const initialState = {
     // cart : [],
     cart: getLocalCartData(),
-    totalItem: Number,
+    totalItem: "",
     totalPrice: "",
     shippinFee : 50000,
 };
@@ -43,8 +43,8 @@ const CartProvider = ({children}) => {
     }
 
     useEffect(()=>{
-        dispatch({type:"CART_TOTAL_ITEM"});
-        dispatch({type: "CART_TOTAL_PRICE"});
+//         dispatch({type:"CART_TOTAL_ITEM"});
+//         dispatch({type: "CART_TOTAL_PRICE"});
         localStorage.setItem("arshadcart",JSON.stringify(state.cart));
     },[state.cart])
 
