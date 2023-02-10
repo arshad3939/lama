@@ -88,15 +88,15 @@ const HeroHeading = styled.h1`
 `;
 const HeroSubHeading = styled.h2`
   font-size: 20px;
-  text-transform: uppercase;
   letter-spacing: 2px;
   margin-top: 15px;
   font-weight: 600;
   color: #000;
   margin-bottom: 40px;
   @media ${DeviceSize.mobile}{
-    font-size: 18px;
+    font-size: 16px;
     text-align: center;
+    padding: 0 20px;
   }
 `
 const HeroButton = styled.button`

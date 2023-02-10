@@ -151,7 +151,7 @@ const Cart = () => {
             return (
               <CartItems key={curElem.id} {...curElem} />
             )
-          })};
+          })}
         </ProductCartItem>
         <BottomButton>
           <ContinueShop><Link to='/product'>Continue Shop</Link></ContinueShop>

@@ -88,7 +88,7 @@ const CartItems = ({ id, name, image, color, price, amount }) => {
         <img src={image} alt={name} />
         <ProductDetail>
           <p>{name}</p>
-          <span style={{display:"flex"}}>Color: <Color style={{ backgroundColor: color }}></Color></span>
+          <span style={{display:"flex"}}>Color: <Color style={{ backgroundColor: "color" }}></Color></span>
         </ProductDetail>
       </Item>
       <Price>
