@@ -14,7 +14,11 @@ const getLocalCartData = () => {
 
 const initialState = {
     cart : [],
+<<<<<<< HEAD
     // cart: getLocalCartData(),
+=======
+//     cart: getLocalCartData(),
+>>>>>>> c257a360d52259657efd19b9f9f7c7a1fed20d07
     totalItem:[],
     totalPrice:[],
     shippinFee : 50000,
