@@ -129,11 +129,11 @@ justify-content: space-between;
 const Cart = () => {
   const { cart, clearCart, totalPrice, shippinFee } = useCartContext();
 
-  if (cart.length === 0) {
+  if (cart?.length === 0) {
     return (
       <Ampaty>
         <h3>No Item in the Cart</h3>
-        <ContinueShop type='button'><Link to='/product'>Continue Shop</Link></ContinueShop>
+        <ContinueShop><Link to='/product'>Continue Shop</Link></ContinueShop>
       </Ampaty>
     )
   } else {
@@ -154,8 +154,8 @@ const Cart = () => {
           })};
         </ProductCartItem>
         <BottomButton>
-          <ContinueShop type='button'><Link to='/product'>Continue Shop</Link></ContinueShop>
-          <ClearCart type='button' onClick={clearCart}>Clear Cart</ClearCart>
+          <ContinueShop><Link to='/product'>Continue Shop</Link></ContinueShop>
+          <ClearCart onClick={clearCart}>Clear Cart</ClearCart>
         </BottomButton>
         <TotalDetail>
           <TotalContent>

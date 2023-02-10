@@ -15,8 +15,8 @@ const getLocalCartData = () => {
 const initialState = {
     // cart : [],
     cart: getLocalCartData(),
-    totalItem:'',
-    totalPrice:'',
+    totalItem:[],
+    totalPrice:[],
     shippinFee : 50000,
 };
 
@@ -45,15 +45,9 @@ const CartProvider = ({children}) => {
     }
 
     useEffect(()=>{
-<<<<<<< HEAD
-        // dispatch({type:"CART_TOTAL_ITEM"});
-        // dispatch({type: "CART_TOTAL_PRICE"});
+        dispatch({type: "CART_TOTAL_ITEM"});
+        dispatch({type: "CART_TOTAL_PRICE"});
         localStorage.setItem("arshadcart", JSON.stringify(state.cart));
-=======
-//         dispatch({type:"CART_TOTAL_ITEM"});
-//         dispatch({type: "CART_TOTAL_PRICE"});
-        localStorage.setItem("arshadcart",JSON.stringify(state.cart));
->>>>>>> 7bbdbc3ea6cee312072a0ead2e7e6417f2cfb1ff
     },[state.cart])
 
 
