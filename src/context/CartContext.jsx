@@ -3,14 +3,14 @@ import reducer from "../reducer/CartReducer";
 
 const CartContext = createContext();
 
-const getLocalCartData = () => {
-    let localCartData = localStorage.getItem("arshadcart");
-    if(localCartData === []){
-        return [];
-    }else{
-        return JSON.parse(localCartData);
-    };
-};
+// const getLocalCartData = () => {
+//     let localCartData = localStorage.getItem("arshadcart");
+//     if(localCartData === []){
+//         return [];
+//     }else{
+//         return JSON.parse(localCartData);
+//     };
+// };
 
 const initialState = {
     cart : [],
@@ -47,8 +47,8 @@ const CartProvider = ({children}) => {
     useEffect(()=>{
         dispatch({type: "CART_TOTAL_ITEM"});
         dispatch({type: "CART_TOTAL_PRICE"});
-        localStorage.setItem("arshadcart", JSON.stringify(state.cart));
-    },[state.cart])
+        // localStorage.setItem("arshadcart", JSON.stringify(state.cart));
+    },[])
 
 
     return(
