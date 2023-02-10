@@ -10,7 +10,7 @@ const CartReducer = (state, action) => {
       return curItem.id === id + color
     })
     if (existingProduct) {
-      let updateProduct = state.cart?.map((curItem) => {
+      const updateProduct = state.cart?.map((curItem) => {
         if (curItem.id === id + color) {
           let newAmount = curItem.amount + amount;
 
@@ -65,7 +65,7 @@ const CartReducer = (state, action) => {
   };
 
   if (action.type === "SET_DECREASE") {
-    let updateProduct = state.cart?.map((curItem) => {
+    const updateProduct = state.cart?.map((curItem) => {
       if (curItem.id === action.payload) {
         let decAmount = curItem.amount - 1;
 
@@ -87,7 +87,7 @@ const CartReducer = (state, action) => {
   };
 
   if (action.type === "SET_INCREASE") {
-    let updateProduct = state.cart?.map((curItem) => {
+    const updateProduct = state.cart?.map((curItem) => {
       if (curItem.id === action.payload) {
         let incAmount = curItem.amount + 1;
 
