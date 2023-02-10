@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/lamaLive/static/css/main.073c9b0a.css",
-    "main.js": "/lamaLive/static/js/main.05beb5d5.js",
+    "main.js": "/lamaLive/static/js/main.6a2c97ab.js",
     "static/js/787.5941ac90.chunk.js": "/lamaLive/static/js/787.5941ac90.chunk.js",
     "static/media/Om-Lama-Marianne-Lars-headerimage-2020-02.webp": "/lamaLive/static/media/Om-Lama-Marianne-Lars-headerimage-2020-02.109d8bf4b06f696adbc5.webp",
     "index.html": "/lamaLive/index.html",
     "main.073c9b0a.css.map": "/lamaLive/static/css/main.073c9b0a.css.map",
-    "main.05beb5d5.js.map": "/lamaLive/static/js/main.05beb5d5.js.map",
+    "main.6a2c97ab.js.map": "/lamaLive/static/js/main.6a2c97ab.js.map",
     "787.5941ac90.chunk.js.map": "/lamaLive/static/js/787.5941ac90.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.05beb5d5.js"
+    "static/js/main.6a2c97ab.js"
   ]
 }
